@@ -5,7 +5,117 @@
 {
 	const scriptsInEvents = {
 
-		async Mainevents_Event69_Act4(runtime, localVars)
+		async Mainevents_Event42_Act3(runtime, localVars)
+		{
+			if (typeof gameManager !== 'undefined') {
+			var data = gameManager.onGameInit()
+			 data = JSON.parse(data)
+			 
+			    var obj = {
+			       userID: data.userId,
+				    gameID: data.gameId,
+			        roomID: data.roomId,
+				   currentScore: runtime.globalVars.SCORE,
+					highScore: runtime.globalVars.HIGHSCORE,
+					playTime: runtime.globalVars.gametime,
+			        type: "over",
+					adGameStartOpportunity:runtime.globalVars.adGameStartOpportunity,
+					adGameStartShown:runtime.globalVars.adGameStartShown,
+					adGameStartClaimed:runtime.globalVars.adGameStartClaimed,
+					adGameEndOpportunity:runtime.globalVars.adGameEndOpportunity,
+					adGameEndShown:runtime.globalVars.adGameEndShown,
+					adGameEndClaimed:runtime.globalVars.adGameEndClaimed,
+					adGamePowerupClaimed:0
+			    }
+			    try {
+			        var data = JSON.stringify(obj)
+			        gameManager.onTrack('gameExit', data)
+			    } catch (e) {
+			        gameManager.onError(e.stack.toString())
+			    }
+			}
+		},
+
+		async Mainevents_Event42_Act5(runtime, localVars)
+		{
+			if (typeof gameManager !== 'undefined') {
+			var data = gameManager.onGameInit()
+			 data = JSON.parse(data)
+			 
+			    var obj = {
+			       gameID: data.gameId,
+			        roomID: data.roomId,
+			        userID: data.userId,
+					score: runtime.globalVars.SCORE,
+					highScore: runtime.globalVars.HIGHSCORE,
+			        info: encryption.getInfo(runtime.globalVars.SCORE, 10, 1)
+					
+			    }
+			    try {
+			        var score = JSON.stringify(obj)
+			        gameManager.onGameOver(score)
+			    } catch (e) {
+			        gameManager.onError(e.stack.toString())
+			    }
+			}
+		},
+
+		async Mainevents_Event43_Act2(runtime, localVars)
+		{
+			if (typeof gameManager !== 'undefined') {
+			var data = gameManager.onGameInit()
+			 data = JSON.parse(data)
+			 
+			    var obj = {
+			       userID: data.userId,
+				    gameID: data.gameId,
+			        roomID: data.roomId,
+				   currentScore: runtime.globalVars.SCORE,
+					highScore: runtime.globalVars.HIGHSCORE,
+					playTime: runtime.globalVars.gametime,
+			        type: "over",
+					adGameStartOpportunity:runtime.globalVars.adGameStartOpportunity,
+					adGameStartShown:runtime.globalVars.adGameStartShown,
+					adGameStartClaimed:runtime.globalVars.adGameStartClaimed,
+					adGameEndOpportunity:runtime.globalVars.adGameEndOpportunity,
+					adGameEndShown:runtime.globalVars.adGameEndShown,
+					adGameEndClaimed:runtime.globalVars.adGameEndClaimed,
+					adGamePowerupClaimed:0
+			    }
+			    try {
+			        var data = JSON.stringify(obj)
+			        gameManager.onTrack('gameExit', data)
+			    } catch (e) {
+			        gameManager.onError(e.stack.toString())
+			    }
+			}
+		},
+
+		async Mainevents_Event43_Act4(runtime, localVars)
+		{
+			if (typeof gameManager !== 'undefined') {
+			var data = gameManager.onGameInit()
+			 data = JSON.parse(data)
+			 
+			    var obj = {
+			       gameID: data.gameId,
+			        roomID: data.roomId,
+			        userID: data.userId,
+					score: runtime.globalVars.SCORE,
+					highScore: runtime.globalVars.HIGHSCORE,
+			        info: encryption.getInfo(runtime.globalVars.SCORE, 10, 1)
+					
+			    }
+			    try {
+			        var score = JSON.stringify(obj)
+			        gameManager.onGameOver(score)
+			    } catch (e) {
+			        gameManager.onError(e.stack.toString())
+			    }
+			}
+		},
+
+		async Mainevents_Event58_Act4(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {
 			
@@ -42,12 +152,7 @@
 			}
 		},
 
-		async Mainevents_Event253_Act1(runtime, localVars)
-		{
-			runtime.globalVars.highscoredoublehua += 1; 
-		},
-
-		async Mainevents_Event253_Act2(runtime, localVars)
+		async Mainevents_Event93_Act2(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {
 			var data = gameManager.onGameInit()
@@ -68,7 +173,7 @@
 			}
 		},
 
-		async Mainevents_Event255_Act2(runtime, localVars)
+		async Mainevents_Event94_Act2(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {
 			var data = gameManager.onGameInit()
@@ -89,7 +194,7 @@
 			}
 		},
 
-		async Mainevents_Event255_Act3(runtime, localVars)
+		async Mainevents_Event94_Act3(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {
 			var data = gameManager.onGameInit()
@@ -111,7 +216,7 @@
 			}
 		},
 
-		async Mainevents_Event256_Act1(runtime, localVars)
+		async Mainevents_Event95_Act1(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined' && 
 			typeof gameManager.onShowRewardedVideoAds === 'function'
@@ -123,8 +228,9 @@
 				   
 				     if (result.status === 0) {
 					 		
-					 runtime.globalVars.SCORE *= 2; 
+					// runtime.globalVars.SCORE *= 2; 
 					 runtime.globalVars.adGameEndClaimed += 1; 
+					 runtime.globalVars.highscoredoublehua += 1; 
 					 
 					
 					 runtime.globalVars.adsound = 0; 
@@ -168,11 +274,6 @@
 			    }
 			}
 			
-		},
-
-		async Mainevents_Event257_Act2(runtime, localVars)
-		{
-			runtime.globalVars.HIGHSCORE = runtime.globalVars.SCORE; 
 		},
 
 		async Upgrade_Event40_Act3(runtime, localVars)
@@ -308,61 +409,6 @@
 			) {
 			    try {
 			        gameManager.onCheckRewardedVideoAds('rewardAdsExist')
-			    } catch (e) {
-			        gameManager.onError(e.stack.toString())
-			    }
-			}
-		},
-
-		async Gameover_Event4_Act2(runtime, localVars)
-		{
-			if (typeof gameManager !== 'undefined') {
-			var data = gameManager.onGameInit()
-			 data = JSON.parse(data)
-			 
-			    var obj = {
-			       userID: data.userId,
-				    gameID: data.gameId,
-			        roomID: data.roomId,
-				   currentScore: runtime.globalVars.SCORE,
-					highScore: runtime.globalVars.HIGHSCORE,
-					playTime: runtime.globalVars.gametime,
-			        type: "over",
-					adGameStartOpportunity:runtime.globalVars.adGameStartOpportunity,
-					adGameStartShown:runtime.globalVars.adGameStartShown,
-					adGameStartClaimed:runtime.globalVars.adGameStartClaimed,
-					adGameEndOpportunity:runtime.globalVars.adGameEndOpportunity,
-					adGameEndShown:runtime.globalVars.adGameEndShown,
-					adGameEndClaimed:runtime.globalVars.adGameEndClaimed,
-					adGamePowerupClaimed:0
-			    }
-			    try {
-			        var data = JSON.stringify(obj)
-			        gameManager.onTrack('gameExit', data)
-			    } catch (e) {
-			        gameManager.onError(e.stack.toString())
-			    }
-			}
-		},
-
-		async Gameover_Event4_Act3(runtime, localVars)
-		{
-			if (typeof gameManager !== 'undefined') {
-			var data = gameManager.onGameInit()
-			 data = JSON.parse(data)
-			 
-			    var obj = {
-			       gameID: data.gameId,
-			        roomID: data.roomId,
-			        userID: data.userId,
-					score: runtime.globalVars.SCORE,
-					highScore: runtime.globalVars.HIGHSCORE,
-			        info: encryption.getInfo(runtime.globalVars.SCORE, 10, 1)
-					
-			    }
-			    try {
-			        var score = JSON.stringify(obj)
-			        gameManager.onGameOver(score)
 			    } catch (e) {
 			        gameManager.onError(e.stack.toString())
 			    }

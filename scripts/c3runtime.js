@@ -3837,25 +3837,27 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.Sprite.Exps.Height,
 		C3.Plugins.Sprite.Cnds.PickByUID,
-		C3.Plugins.System.Cnds.OnLayoutStart,
-		C3.Plugins.LocalStorage.Acts.CheckItemExists,
+		C3.Plugins.LocalStorage.Cnds.OnItemMissing,
+		C3.Plugins.LocalStorage.Acts.SetItem,
 		C3.Plugins.LocalStorage.Cnds.OnItemExists,
 		C3.Plugins.LocalStorage.Acts.GetItem,
-		C3.Plugins.LocalStorage.Cnds.OnItemGet,
 		C3.Plugins.LocalStorage.Exps.ItemValue,
-		C3.Plugins.LocalStorage.Acts.SetItem,
-		C3.Plugins.LocalStorage.Cnds.OnItemMissing,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
+		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.LocalStorage.Acts.CheckItemExists,
 		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.System.Acts.Wait,
+		C3.ScriptsInEvents.Mainevents_Event42_Act3,
 		C3.Plugins.GameAnalytics.Acts.endSession,
-		C3.Plugins.System.Acts.GoToLayout,
+		C3.ScriptsInEvents.Mainevents_Event42_Act5,
+		C3.ScriptsInEvents.Mainevents_Event43_Act2,
+		C3.ScriptsInEvents.Mainevents_Event43_Act4,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Spritefont2.Acts.SetVisible,
-		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Spritefont2.Acts.Destroy,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetGroupActive,
@@ -3864,7 +3866,8 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.System.Cnds.Compare,
-		C3.ScriptsInEvents.Mainevents_Event69_Act4,
+		C3.ScriptsInEvents.Mainevents_Event58_Act4,
+		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Audio.Acts.SetSilent,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
@@ -3880,7 +3883,13 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
+		C3.ScriptsInEvents.Mainevents_Event93_Act2,
+		C3.ScriptsInEvents.Mainevents_Event94_Act2,
+		C3.ScriptsInEvents.Mainevents_Event94_Act3,
+		C3.ScriptsInEvents.Mainevents_Event95_Act1,
+		C3.Plugins.LocalStorage.Cnds.OnItemGet,
 		C3.Behaviors.Flash.Acts.Flash,
+		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Sprite.Cnds.CompareY,
 		C3.Plugins.Sprite.Acts.SetTowardPosition,
 		C3.Plugins.Sprite.Cnds.CompareX,
@@ -3905,18 +3914,11 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		C3.Plugins.Sprite.Cnds.IsMirrored,
 		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
 		C3.Behaviors.Platform.Cnds.IsOnFloor,
-		C3.ScriptsInEvents.Mainevents_Event253_Act1,
-		C3.ScriptsInEvents.Mainevents_Event253_Act2,
-		C3.ScriptsInEvents.Mainevents_Event255_Act2,
-		C3.ScriptsInEvents.Mainevents_Event255_Act3,
-		C3.ScriptsInEvents.Mainevents_Event256_Act1,
-		C3.ScriptsInEvents.Mainevents_Event257_Act2,
 		C3.Plugins.Sprite.Acts.StartAnim,
 		C3.Plugins.Sprite.Cnds.OnAnimFinished,
 		C3.Plugins.Audio.Cnds.IsTagPlaying,
 		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Cnds.Else,
-		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Mouse.Cnds.IsOverObject,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
 		C3.ScriptsInEvents.Upgrade_Event40_Act3,
@@ -3929,16 +3931,13 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		C3.Plugins.GameAnalytics.Acts.initialize,
 		C3.Plugins.GameAnalytics.Acts.setEnabledEventSubmission,
 		C3.Plugins.GameAnalytics.Acts.startSession,
-		C3.Plugins.LocalStorage.Acts.ClearStorage,
 		C3.Plugins.Browser.Cnds.IsPortraitLandscape,
 		C3.Plugins.Audio.Acts.Preload,
 		C3.Plugins.Audio.Acts.SetMasterVolume,
 		C3.ScriptsInEvents.Title_Event19_Act1,
 		C3.ScriptsInEvents.Title_Event19_Act2,
 		C3.ScriptsInEvents.Title_Event19_Act3,
-		C3.Behaviors.Platform.Acts.SetEnabled,
-		C3.ScriptsInEvents.Gameover_Event4_Act2,
-		C3.ScriptsInEvents.Gameover_Event4_Act3
+		C3.Behaviors.Platform.Acts.SetEnabled
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -4253,14 +4252,13 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 			return () => v0.GetValue();
 		},
 		() => "STORAGE",
-		() => "highscore",
+		() => "BUNKER STORAGE",
+		() => "HoldPosition_bunkerDamage",
+		() => 5,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
-		() => "BUNKER STORAGE",
-		() => "HoldPosition_bunkerDamage",
-		() => 5,
 		() => "HoldPosition_bunkerHP",
 		() => 500,
 		p => {
@@ -4310,6 +4308,8 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 			const n3 = p._GetNode(3);
 			return () => C3.toDegrees(C3.angleTo(n0.ExpObject(), n1.ExpObject(), n2.ExpObject(), n3.ExpObject()));
 		},
+		() => "score multply",
+		() => "highscore",
 		() => 0.1,
 		() => 0.2,
 		() => "BUNKER AI",
@@ -4454,7 +4454,6 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		() => 518,
 		() => 1696,
 		() => 516,
-		() => "score multply",
 		() => 1849,
 		() => 64,
 		() => "BG",
@@ -4468,29 +4467,12 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		() => "BUNKER STORAGE2",
 		() => "GROUND TURRET STORAGE2",
 		() => "AIR TURRET STORAGE2",
-		() => "UPGRADE",
-		() => "ground_hp",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() + 100);
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() - 500);
-		},
-		() => "ground_dmg",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() + 3);
-		},
-		() => "bunker_hp",
 		() => "bunker_dmg",
-		() => "air_hp",
-		() => "air_dmg",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and(v0.GetValue(), "+3");
 		},
+		() => "bunker_hp",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and(v0.GetValue(), "+100");
@@ -4522,9 +4504,7 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		() => 138,
 		() => "Player Turret2",
 		() => "Layer 1",
-		() => "joytstick2",
-		() => "UI",
-		() => "Timer"
+		() => "joytstick2"
 	];
 }
 
