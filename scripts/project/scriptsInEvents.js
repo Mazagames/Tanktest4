@@ -170,6 +170,11 @@
 			
 		},
 
+		async Mainevents_Event257_Act2(runtime, localVars)
+		{
+			runtime.globalVars.HIGHSCORE = runtime.globalVars.SCORE; 
+		},
+
 		async Upgrade_Event40_Act3(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {

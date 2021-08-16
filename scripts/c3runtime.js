@@ -3910,6 +3910,7 @@ this._stage=0;this._stageTimeLeft+=this._onTime}this._runtime.UpdateRender()}}Ge
 		C3.ScriptsInEvents.Mainevents_Event255_Act2,
 		C3.ScriptsInEvents.Mainevents_Event255_Act3,
 		C3.ScriptsInEvents.Mainevents_Event256_Act1,
+		C3.ScriptsInEvents.Mainevents_Event257_Act2,
 		C3.Plugins.Sprite.Acts.StartAnim,
 		C3.Plugins.Sprite.Cnds.OnAnimFinished,
 		C3.Plugins.Audio.Cnds.IsTagPlaying,
