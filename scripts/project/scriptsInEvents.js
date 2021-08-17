@@ -173,7 +173,7 @@
 			}
 		},
 
-		async Mainevents_Event94_Act2(runtime, localVars)
+		async Mainevents_Event94_Act3(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {
 			var data = gameManager.onGameInit()
@@ -194,7 +194,7 @@
 			}
 		},
 
-		async Mainevents_Event94_Act3(runtime, localVars)
+		async Mainevents_Event94_Act4(runtime, localVars)
 		{
 			if (typeof gameManager !== 'undefined') {
 			var data = gameManager.onGameInit()
